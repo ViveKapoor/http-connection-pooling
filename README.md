@@ -11,7 +11,7 @@ Usually when talking about a HTTP call, only the orange section (in fig. below) 
 ![The HTTP Connection Lifecycle](https://github.com/ViveKapoor/http-connection-pooling/blob/main/HTTP-Connection-Lifecycle.png)
 
 ### DNS Resolution
-When calling another service, it usually has some kind of hostname (e.g. [reqres.in](https://reqres.in/)).  In order to call this service, this hostname needs to be resolved into an IP address (think of this like looking up a phone number for a business name).
+When calling another service, it usually has some kind of hostname (e.g. [reqres.in](https://reqres.in/)).  In order to call this service, this hostname needs to be resolved into an IP address.
 
 DNS resolution typically happens over the UDP transport, which is a connectionless protocol unlike TCP, which means there is no handshake necessary between the client and the DNS server and instead the request can just be sent and then wait for the response.
 
