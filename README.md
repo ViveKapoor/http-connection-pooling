@@ -47,4 +47,4 @@ The spikes indicate that without pool the response times are quite unstable beca
 Please note that the performace gain with HTTP connection pooling is inversely proportional to the HTTP request/response (processing) time, i.e. it's not guaranteed that we will always get a constant performance gain of 13x
 
 ## Steps to run POC code
-Please check steps here : https://github.com/ViveKapoor/http-connection-pooling/blob/main/httpConnectionPool/HELP.md
+Please check steps [here](https://github.com/ViveKapoor/http-connection-pooling/blob/main/httpConnectionPool/HELP.md)
