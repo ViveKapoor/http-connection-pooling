@@ -2,9 +2,9 @@
 Follow below steps to run this code on your machine:
 1. Clone this project
 2. From terminal navigate to the project
-3. Run `{ ./gradlew clean build }`
-4. Run `{ java -jar ./build/libs/httpConnectionPool-0.0.1-SNAPSHOT.jar }`
-5. Hit curl from terminal `{ curl --location --request GET 'http://localhost:8080/execute/' }` to execute
+3. Run `./gradlew clean build`
+4. Run `java -jar ./build/libs/httpConnectionPool-0.0.1-SNAPSHOT.jar`
+5. Hit curl from terminal `curl --location --request GET 'http://localhost:8080/execute/'` to execute
 
 
 # Getting Started
