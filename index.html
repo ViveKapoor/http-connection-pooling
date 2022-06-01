@@ -4,7 +4,7 @@
 <p>In a microservices architecture, the number of server to server connections increases dramatically because the interactions which would traditionally have been an in-memory process in one application now often depends on remote calls to other REST based services over HTTP, meaning it is more important than ever to ensure these remote calls are both fast and efficient.  Let’s look at the lifecycle of a HTTP connection to understand the areas of improvement and possible solution.</p>
 <h2 id="the-http-connection-lifecycle">The HTTP Connection Lifecycle</h2>
 <p>Usually when talking about a HTTP call, only the orange section (in fig. below) is thought about. A client sends a request to an endpoint, describing what data is being requested, the server processes this request and sends back the data in a response. However it’s clear to see a lot more is happening, most importantly each time the arrows change directions latency will be measurable.</p>
-<p><img src="https://github.com/ViveKapoor/http-connection-pooling/blob/main/HTTP-Connection-Lifecycle.png" alt="The HTTP Connection Lifecycle"></p>
+<p><img src="https://raw.githubusercontent.com/ViveKapoor/http-connection-pooling/main/HTTP-Connection-Lifecycle.png" alt="The HTTP Connection Lifecycle"></p>
 <h3 id="dns-resolution">DNS Resolution</h3>
 <p>When calling another service, it usually has some kind of hostname (e.g. <a href="https://reqres.in/">reqres.in</a>).  In order to call this service, this hostname needs to be resolved into an IP address.</p>
 <p>DNS resolution typically happens over the UDP transport, which is a connectionless protocol unlike TCP, which means there is no handshake necessary between the client and the DNS server and instead the request can just be sent and then wait for the response.</p>
@@ -22,9 +22,9 @@
 <p>Conceptually, this is actually quite simple.  Taking an example of 2 requests made back to back, the first request will proceed as normal through the lifecycle shown above, until it gets to close the connection.  When connection pooling is in use, instead of closing the connection it will instead be put to one side for use later.  When a second request then needs to be made to the same host it can skip DNS resolution, TCP connect and TLS handshake, and just reuse the connection we put to one side earlier.</p>
 <h3 id="performace-gain-with-connection-pool">Performace gain with connection pool</h3>
 <p>Below results show the stability and performace gain with coonection pool.</p>
-<p><img src="https://github.com/ViveKapoor/http-connection-pooling/blob/main/13x-performance-gain.png" alt="Performance comparison"></p>
+<p><img src="https://raw.githubusercontent.com/ViveKapoor/http-connection-pooling/main/13x-performance-gain.png" alt="Performance comparison"></p>
 <p>As we can see, the performance get&#39;s improved by ~13 times if we use a connection pool vs without a connection pool.</p>
-<p><img src="https://github.com/ViveKapoor/http-connection-pooling/blob/main/response-time-graph.png" alt="Response time graph"></p>
+<p><img src="https://raw.githubusercontent.com/ViveKapoor/http-connection-pooling/main/response-time-graph.png" alt="Response time graph"></p>
 <p>The above graph clearly shows how the response time becomes stable with a connection pool.
 The spikes indicate that without pool the response times are quite unstable because for each every new request made to the server, client has has to establish a new connection and time to make new connection is not constant as it depends on the network as well as server load.</p>
 <h2 id="note">Note</h2>
