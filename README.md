@@ -44,7 +44,11 @@ The above graph clearly shows how the response time becomes stable with a connec
 The spikes indicate that without pool the response times are quite unstable because for each every new request made to the server, client has has to establish a new connection and time to make new connection is not constant as it depends on the network as well as server load.
 
 ## Note
-Please note that the performace gain with HTTP connection pooling is inversely proportional to the HTTP request/response (processing) time, i.e. it's not guaranteed that we will always get a constant performance gain of 13x
+Please note that the performace gain with HTTP connection pooling is inversely proportional to the HTTP request/response (processing) time, i.e. it's not guaranteed that we will always get a constant performance gain of 13x, i.e,
+
+<div align="center">
+  performance gain ∝ 1/(𝑠𝑒𝑟𝑣𝑒𝑟 𝑝𝑟𝑜𝑐𝑒𝑠𝑠𝑖𝑛𝑔 𝑡𝑖𝑚𝑒)
+</div>
 
 ## Steps to run POC code
 Please check steps [here](https://github.com/ViveKapoor/http-connection-pooling/blob/main/httpConnectionPool/HELP.md)
