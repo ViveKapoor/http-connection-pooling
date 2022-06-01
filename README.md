@@ -8,7 +8,7 @@ In a microservices architecture, the number of server to server connections incr
 ## The HTTP Connection Lifecycle
 Usually when talking about a HTTP call, only the orange section (in fig. below) is thought about. A client sends a request to an endpoint, describing what data is being requested, the server processes this request and sends back the data in a response. However it’s clear to see a lot more is happening, most importantly each time the arrows change directions latency will be measurable.
 
-![The HTTP Connection Lifecycle](https://github.com/ViveKapoor/http-connection-pooling/blob/main/HTTP-Connection-Lifecycle.png)
+![The HTTP Connection Lifecycle](https://raw.githubusercontent.com/ViveKapoor/http-connection-pooling/main/HTTP-Connection-Lifecycle.png)
 
 ### DNS Resolution
 When calling another service, it usually has some kind of hostname (e.g. [reqres.in](https://reqres.in/)).  In order to call this service, this hostname needs to be resolved into an IP address.
@@ -37,11 +37,11 @@ Conceptually, this is actually quite simple.  Taking an example of 2 requests ma
 ### Performace gain with connection pool
 Below results show the stability and performace gain with coonection pool.
 
-![Performance comparison](https://github.com/ViveKapoor/http-connection-pooling/blob/main/13x-performance-gain.png)
+![Performance comparison](https://raw.githubusercontent.com/ViveKapoor/http-connection-pooling/main/13x-performance-gain.png)
 
 As we can see, the performance get's improved by ~13 times if we use a connection pool vs without a connection pool.
 
-![Response time graph](https://github.com/ViveKapoor/http-connection-pooling/blob/main/response-time-graph.png)
+![Response time graph](https://raw.githubusercontent.com/ViveKapoor/http-connection-pooling/main/response-time-graph.png)
 
 The above graph clearly shows how the response time becomes stable with a connection pool.
 The spikes indicate that without pool the response times are quite unstable because for each every new request made to the server, client has has to establish a new connection and time to make new connection is not constant as it depends on the network as well as server load.
