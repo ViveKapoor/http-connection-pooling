@@ -1,6 +1,3 @@
-## Steps to run demo code
-https://github.com/ViveKapoor/http-connection-pooling/blob/main/httpConnectionPool/HELP.md
-
 # Performance gain using HTTP Connection Pool
 
 In a microservices architecture, the number of server to server connections increases dramatically because the interactions which would traditionally have been an in-memory process in one application now often depends on remote calls to other REST based services over HTTP, meaning it is more important than ever to ensure these remote calls are both fast and efficient.  Let’s look at the lifecycle of a HTTP connection to understand the areas of improvement and possible solution.
@@ -48,3 +45,6 @@ The spikes indicate that without pool the response times are quite unstable beca
 
 ## Note
 Please note that the performace gain with HTTP connection pooling is inversely proportional to the HTTP request/response (processing) time, i.e. it's not guaranteed that we will always get a constant performance gain of 13x
+
+## Steps to run POC code
+https://github.com/ViveKapoor/http-connection-pooling/blob/main/httpConnectionPool/HELP.md
